@@ -1,4 +1,4 @@
-mport "dotenv/config";
+import "dotenv/config";
 import express from "express";
 import { WebSocketServer } from "ws";
 import { createServer } from "node:http";

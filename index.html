@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>Kitchen Display</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>Kitchen Display</h1>
+      <span id="modeBadge" class="badge">…</span>
+    </div>
+    <div class="topbar-right">
+      <span id="connDot" class="conn-dot" title="Connection status"></span>
+      <span id="clock" class="clock">--:--</span>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main class="board">
+    <section class="column" data-state="PROPOSED">
+      <h2>New <span class="count" id="count-PROPOSED">0</span></h2>
+      <div class="cards" id="col-PROPOSED"></div>
+    </section>
+    <section class="column" data-state="RESERVED">
+      <h2>Preparing <span class="count" id="count-RESERVED">0</span></h2>
+      <div class="cards" id="col-RESERVED"></div>
+    </section>
+    <section class="column" data-state="PREPARED">
+      <h2>Ready <span class="count" id="count-PREPARED">0</span></h2>
+      <div class="cards" id="col-PREPARED"></div>
+    </section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-head">
+        <span class="ticket-label"></span>
+        <span class="timer">0:00</span>
+      </div>
+      <div class="recipient"></div>
+      <ul class="items"></ul>
+      <div class="note" hidden></div>
+      <button class="bump-btn" type="button"></button>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
